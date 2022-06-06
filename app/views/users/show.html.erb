@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<% @events.each do |event| %>
+  <%= event.location %>
+  <%= event.date %>
+  <%= event.host.name %>
+<% end %>
+
+<div>
+  <%= link_to "Back to home", root_path %>
+</div>
