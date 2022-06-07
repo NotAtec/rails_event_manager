@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bulma";
+ @import "variables";
+
+ body {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+ }
+
+ .secondary-txt {
+   color: $orangered;
+ }
+
+ body > footer {
+   margin-top: auto;
+   padding: 1.5rem;
+   background-color: $white-ish;
+ }
+
+ .notification:not(:last-child) {
+	margin-bottom: 0;
+  animation: moveout 1s 1s ease forwards;
+  position: absolute;
+  width: 100vw;
+  z-index: 31;
+  }
+
+  @keyframes moveout {
+    from { top: 0px; }
+    to   { top: -4rem; }
+  }
+
+  .txt-orangered {
+    color: orangered;
+  }
+
+  .txt-blackish {
+    color: $black-ish;
+  }
