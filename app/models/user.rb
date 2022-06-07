@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :hosted_events, class_name: 'Event', foreign_key: 'host_id'
+
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
+  validates :password, length: { minimum: 6 }
 end
