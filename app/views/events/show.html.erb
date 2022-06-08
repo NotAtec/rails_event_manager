@@ -1,10 +1,34 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @event %>
-
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
-
-  <%= button_to "Destroy this event", @event, method: :delete %>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="card" id="event">
+          <div class="card-content">
+            <p class="title"><%= @event.title%></p>
+            <p class="subtitle txt-orangered"><%= @event.date%></p>
+            <p class="subtitle is-size-6">Location: <%= @event.location%></p>
+            <hr>
+            <p><%= @event.description%></p>
+            <br>
+            <span>By: <%= @event.host.username %></span>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              Like
+            </p>
+            <p class="card-footer-item">
+              Get Ticket
+            </p>
+          </footer>
+          <% if user_signed_in? && current_user == @event.host %>
+            <footer class="card-footer">
+              <p class="card-footer-item">
+                <%= link_to "Edit Event", edit_event_path(@event) %>
+              </p>
+            </footer>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

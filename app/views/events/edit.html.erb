@@ -1,10 +1,17 @@
-<h1>Editing event</h1>
+<div class="section" >
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <!-- back button, top left -->
 
-<%= render "form", event: @event %>
-
-<br>
-
-<div>
-  <%= link_to "Show this event", @event %> |
-  <%= link_to "Back to events", events_path %>
+        <%= link_to @event, class: "txt-orangered is-size-7" do%>
+          <b>Back to Event</b>
+        <% end %>
+        <%= render "form", event: @event %>
+        <br>
+        <%= button_to "Destroy this event", @event, method: :delete, class: "button is-danger"%>       
+      </div>
+    </div>
+  </div>
 </div>
+
