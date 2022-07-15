@@ -13,20 +13,18 @@
             <span>By: <%= @event.host.username %></span>
           </div>
           <footer class="card-footer">
-            <p class="card-footer-item">
-              Like
-            </p>
-            <p class="card-footer-item">
-              Get Ticket
-            </p>
-          </footer>
-          <% if user_signed_in? && current_user == @event.host %>
-            <footer class="card-footer">
+            <% if user_signed_in? %>
+              <% if @event.attendees.find { |a| a.id == current_user.id } %>
+                  <%= button_to "Remove Ticket", event_ticketing_path(@event), method: :delete, class: "button is-danger ", form_class: "card-footer-item is-fullwidth" %>
+              <% else %>
+                <%= button_to "Get Ticket", event_ticketings_path(@event), method: :post, class: "button is-success",  form_class: "card-footer-item is-fullwidth"  %>
+              <% end %>
+            <% end %>
+            <% if user_signed_in? && current_user == @event.host %>
               <p class="card-footer-item">
                 <%= link_to "Edit Event", edit_event_path(@event) %>
               </p>
-            </footer>
-          <% end %>
+            <% end %>
         </div>
       </div>
     </div>
