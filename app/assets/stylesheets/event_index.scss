@@ -10,3 +10,12 @@
   column-gap: 16px;
   row-gap: 8px;
 }
+
+.small-grid-container {
+  margin: 0;
+  display: grid;
+  grid-template-rows: repeat(320px);
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 8px;
+}

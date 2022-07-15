@@ -2,11 +2,26 @@
   <div class="columns is-centered">
     <div class="column is-four-fifths">
       <h1 class="title">Your Tickets</h1>
-      <div class="tickets">
-        <div class="grid-container">
-          <% @tickets.each do |ticket| %>
-            <span><%= render ticket %></span>
-          <% end %>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <h2 class="subtitle">Past Events</h2>
+          <div class="tickets">
+            <div class="small-grid-container">
+              <% @tickets.where("date < ?", Date.today.to_s).each do |ticket| %>
+                <span><%= render ticket %></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <h2 class="subtitle">Future Events</h2>
+          <div class="tickets">
+            <div class="small-grid-container">
+              <% @tickets.where("date >= ?", Date.today.to_s).each do |ticket| %>
+                <span><%= render ticket %></span>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
