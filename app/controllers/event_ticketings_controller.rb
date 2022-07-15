@@ -9,7 +9,7 @@ class EventTicketingsController < ApplicationController
       @event.attendees.push(@user)
       flash[:notice] = "Succesfully added ticket!"
     end
-    redirect_to event_path(@event)
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
@@ -19,7 +19,7 @@ class EventTicketingsController < ApplicationController
     else
       flash[:notice] = "You don't have a ticket!"
     end
-    redirect_to event_path(@event)
+    redirect_back(fallback_location: root_path)
   end
 
   private

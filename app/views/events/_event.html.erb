@@ -14,6 +14,8 @@
           <%= link_to "Edit Event", edit_event_path(event) %>
         </p>
       <% end %>
+    <% elsif user_signed_in? && current_page?(user_tickets_path(current_user.id)) %>
+      <%= button_to "Remove Ticket", event_ticketing_path(event), method: :delete, class: "button is-danger ", form_class: "card-footer-item is-fullwidth" %>
     <% else %>
       <p class="card-footer-item">
         <span>Hosted By: <%= link_to event.host.username, user_path(event.host.id) %></span>

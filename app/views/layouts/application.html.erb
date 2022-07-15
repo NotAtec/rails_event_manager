@@ -44,7 +44,7 @@
             </p>
           </div>
           <div class="navbar-item">
-            <div class="control"></div>
+            <div class="control"><%= link_to "Tickets", user_tickets_path(current_user.id), class: "txt-orangered" %></div>
           </div>
           <div class="navbar-item" id="dd">
             <div class="dropdown">
@@ -58,7 +58,7 @@
               <div class="dropdown-menu" id="dropdown-menu" role="menu">
                 <div class="dropdown-content">
                   <p class="dropdown-item"><%= link_to "Manage Events", user_path(current_user.id) %></p>
-                  <p class="dropdown-item">Manage Tickets</p>
+                  <p class="dropdown-item"><%= link_to "Manage Tickets", user_tickets_path(current_user.id) %></p>
                   <hr class="dropdown-divider">
                   <%= link_to edit_user_registration_path do %>
                     <p class="dropdown-item">Account Settings</p>

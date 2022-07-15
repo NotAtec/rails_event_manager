@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
-
-
-
 <div class="section">
   <div class="columns is-centered">
     <div class="column is-four-fifths">
-      <div class="events">
+      <h1 class="title">Your Tickets</h1>
+      <div class="tickets">
         <div class="grid-container">
-          <% @events.each do |event| %>
-            <span><%= render event %></span>
+          <% @tickets.each do |ticket| %>
+            <span><%= render ticket %></span>
           <% end %>
         </div>
       </div>
