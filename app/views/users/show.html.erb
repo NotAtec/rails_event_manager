@@ -1,11 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<% @events.each do |event| %>
-  <%= event.location %>
-  <%= event.date %>
-  <%= event.host.email %>
-<% end %>
-
 <div>
   <%= link_to "Back to home", root_path %>
+</div>
+
+<div class="section">
+  <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <div class="events">
+        <div class="grid-container">
+          <% @events.each do |event| %>
+            <span><%= render event %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

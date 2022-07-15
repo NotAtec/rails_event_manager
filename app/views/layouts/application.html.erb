@@ -44,7 +44,7 @@
             </p>
           </div>
           <div class="navbar-item">
-            <div class="control">Tickets</div>
+            <div class="control"></div>
           </div>
           <div class="navbar-item" id="dd">
             <div class="dropdown">
@@ -57,7 +57,7 @@
               </span>
               <div class="dropdown-menu" id="dropdown-menu" role="menu">
                 <div class="dropdown-content">
-                  <p class="dropdown-item">Manage Events</p>
+                  <p class="dropdown-item"><%= link_to "Manage Events", user_path(current_user.id) %></p>
                   <p class="dropdown-item">Manage Tickets</p>
                   <hr class="dropdown-divider">
                   <%= link_to edit_user_registration_path do %>

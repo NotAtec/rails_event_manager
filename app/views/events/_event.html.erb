@@ -8,8 +8,17 @@
     <p class="card-footer-item">
       <span><%= link_to 'View Event', event_path(event) %></span>
     </p>
-    <p class="card-footer-item">
-      <span>Hosted By: <%= event.host.username %></span> <!-- add link to userprofile here -->
-    </p>
+    <% if current_page?(user_path(event.host.id)) %>
+      <% if user_signed_in? && current_user == event.host%>
+        <p class="card-footer-item">
+          <%= link_to "Edit Event", edit_event_path(event) %>
+        </p>
+      <% end %>
+    <% else %>
+      <p class="card-footer-item">
+        <span>Hosted By: <%= link_to event.host.username, user_path(event.host.id) %></span>
+      </p>
+    <% end %>
+    
   </footer>
 </div>
