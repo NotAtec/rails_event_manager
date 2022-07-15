@@ -2,9 +2,19 @@
   <div class="columns is-centered">
     <div class="column is-four-fifths">
       <!-- Add hero here -->
+      <h1 class="title">Upcoming Events</h1>
       <div class="events">
         <div class="grid-container">
-          <% @events.each do |event| %>
+          <% @events.future_event.each do |event| %>
+            <span><%= render event %></span>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+      <h2 class="subtitle">Past Events</h2>
+      <div class="events">
+        <div class="grid-container">
+          <% @events.past_event.each do |event| %>
             <span><%= render event %></span>
           <% end %>
         </div>
