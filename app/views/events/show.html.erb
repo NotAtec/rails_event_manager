@@ -25,7 +25,28 @@
                 <%= link_to "Edit Event", edit_event_path(@event) %>
               </p>
             <% end %>
+          </footer>
         </div>
+        <hr>
+        <h2 class="title">Attendees</h2>
+        <br>
+        <% @event.attendees.each do |attendee| %>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://mastodon.sdf.org/system/accounts/avatars/000/108/313/original/035ab20c290d3722.png" alt="An anonymous user">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4"><%= attendee.username %></p>
+                <% if user_signed_in? && current_user == @event.host %>
+                  <p class="subtitle is-6"><%= attendee.email %></p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
