@@ -1,24 +1,24 @@
-# README
+# EventNite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple clone of [EventBrite](https://www.eventbrite.nl/), an event hosting and management platform. 
 
-Things you may want to cover:
+Platform gives users the ability to create events, with the ability for other users to manage their tickets for these events.
 
-* Ruby version
+To create events or manage tickets, you need an account.
 
-* System dependencies
+[Live Preview](https://dashboard.heroku.com/apps/desolate-caverns-00279) <--
 
-* Configuration
+## Features
+  - Main page with separated list of future and past events 
+  - Railsy webpage building, using templates & partials
+  - Managment pages for tickets & hosted events, when logged in
+  - UI Created with Bulma.io library and customized for specific usecase
+  - User authentication using email & password, handled by Devise gem
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Built With
+- Frontend: HTML, CSS, JS
+- Backend: Ruby on Rails 7.0
+  - Bulma.io for Rails (UI Design)
+  - Devise (Authentication Management)
+  - SQLite3 / PostgreSQL (Database, SQLite used in testing)
+  - Simple Forms
