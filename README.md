@@ -6,7 +6,7 @@ Platform gives users the ability to create events, with the ability for other us
 
 To create events or manage tickets, you need an account.
 
-[Live Preview](https://dashboard.heroku.com/apps/desolate-caverns-00279) <--
+[Live Preview](https://desolate-caverns-00279.herokuapp.com/) <--
 
 ## Features
   - Main page with separated list of future and past events 
